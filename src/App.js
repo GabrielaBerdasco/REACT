@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+//Usar el mismo nombre que el componente, primera letra en mayúscula
+//Las variables solo están disponibles por archivo asique hay que exportarlas antes de importar
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//https://developers.google.com/fonts/docs/material_icons
+//https://fonts.google.com/icons
+
+//COMPONENTES
+import Header from "./componentes/header/Header";
+
+const App = () => {
+    return (
+        <>
+            <Header />
+        </>
+    );
 }
 
 export default App;
