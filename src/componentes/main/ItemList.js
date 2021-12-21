@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react"
+/* import { useState, useEffect } from "react" */
 import Item from "./Item"
 
-const ItemList = ({productosPromesa}) => {
-    const [productos, setProductos] = useState([]);
+const ItemList = ({productos}) => {
+    /* const [productos, setProductos] = useState([]);
 
     useEffect(() => {
         productosPromesa().then((data) => {
             setProductos(data);
         })
-    }, []);
+    }, []); */
 
 
     console.log(productos)

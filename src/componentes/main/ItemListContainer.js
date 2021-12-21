@@ -1,5 +1,5 @@
-/* import ItemCount from "./ItemCount"; */
 import ItemList from "./ItemList";
+import { useState, useEffect } from "react"
 import "./styleMain.css"
 
 const productosPromesa = () => {
@@ -19,11 +19,13 @@ const productosPromesa = () => {
 
 const ItemListContainer = ({nombre, apellido}) => {
 
-    /* const onAdd = (contador, setContador) => {
-        if (contador !== 0) {
-        setContador (1)
-        }
-    } */
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        productosPromesa().then((data) => {
+            setProductos(data);
+        })
+    }, []);
 
     return (
         <>
@@ -31,9 +33,8 @@ const ItemListContainer = ({nombre, apellido}) => {
             ¡Bienvenido a nuestra tienda virtual, {nombre} {apellido}!
             </h2>
             <div>
-                <ItemList productosPromesa={productosPromesa}/>
+                <ItemList productos={productos}/>
             </div>
-            {/* <ItemCount stock={5} inicial={1} onAdd={onAdd}/> */}
         </>
     );
 }
