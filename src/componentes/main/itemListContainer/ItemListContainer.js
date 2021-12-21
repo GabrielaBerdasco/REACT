@@ -1,6 +1,6 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react"
-import "./styleMain.css"
+import "../styleMain.css"
 
 const productosPromesa = () => {
     return new Promise((resolve) => {
@@ -32,9 +32,10 @@ const ItemListContainer = ({nombre, apellido}) => {
             <h2 className="itemListContainer">
             ¡Bienvenido a nuestra tienda virtual, {nombre} {apellido}!
             </h2>
-            <div>
+            <article>
+                <h3 className="itemListContainer">Productos Destacados</h3>
                 <ItemList productos={productos}/>
-            </div>
+            </article>
         </>
     );
 }

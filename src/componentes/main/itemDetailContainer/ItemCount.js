@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "./styleMain.css"
+import "../styleMain.css"
 
 
 const ItemCount = ({stock, inicial, onAdd}) => {
@@ -21,7 +21,11 @@ const ItemCount = ({stock, inicial, onAdd}) => {
     }
 
     const notify = () =>{
+        if(contador > 0) {
         toast("Agregaste " + contador + " productos al carrito");
+        } else {
+            toast.error("Por favor, selecciona cantidad de unidades")
+        }
     }
 
     return (
