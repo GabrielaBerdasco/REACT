@@ -1,3 +1,39 @@
+/* HOME */
+
+.bannerInicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin-top: 25px;
+    background-color: rgba(240, 165, 138, 0.89);
+    color: white;
+}
+
+.tittle{
+    font-size: xx-large;
+    padding: 10px;
+}
+
+.inicioCategorías{
+display: flex;
+height: 170px;
+margin: 70px;
+align-items: center;
+justify-content: space-between;
+background-color: rgb(253, 205, 163);
+}
+
+.linkTittle{
+    font-size: 45px;
+    padding: 20px;
+}
+
+.linkTittle>a{
+    color: white;
+    text-decoration: none;
+}
 /* Item List Container */
 .itemListContainer{
     color: #ff5d23;
@@ -37,6 +73,11 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
+}
+
+.cardImage{
+    width: 100px;
+    height: 100px;
 }
 
 .cardDescripcion{

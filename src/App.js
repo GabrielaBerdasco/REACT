@@ -12,8 +12,8 @@ const App = () => {
     
     const navbarLinks = [
         {href: "/nosotros", name:"Nosotros", id: "1" },
-        {href: "/category/hogar", name:"Hogar", id: "2" },
-        {href: "/category/accesorios", name:"Accesorios", id: "3" }
+        {href: "/hogar", name:"Hogar", id: "2" },
+        {href: "/accesorios", name:"Accesorios", id: "3" }
     ]
 
 
@@ -24,9 +24,9 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home/>} />
                     <Route path="/nosotros" element={<Nosotros/>} />
-                    <Route path="/category/:name" element={<ItemListContainer nombre={"Diego"} apellido={"Grassino"}/>} />
+                    <Route path="/:name" element={<ItemListContainer nombre={"Diego"} apellido={"Grassino"}/>} />
                     <Route path="/carrito" element={<Cart/>} />
-                    <Route path="/producto/:id" element={<ItemDetailContainer />} />
+                    <Route path="/:name/productos/:id" element={<ItemDetailContainer />} />
                 </Routes>
             </main>
         </BrowserRouter>
