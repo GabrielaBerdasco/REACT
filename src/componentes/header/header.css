@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .header{
     height: 90px;
     background-color: bisque;
@@ -8,14 +13,18 @@
     flex-direction: row;
     justify-content: space-between;
     
-} 
+}
 
 .brand{
+    margin: 20px;
+}
+
+.brand>a{
     color: #ff5d23;
     margin-left: 20px;
     font-weight: 600;
     font-size: xx-large;
-    
+    text-decoration: none;    
 }
 
 .nav>ul{
@@ -26,12 +35,12 @@
     font-size: larger;
 }
 
-.nav>ul>li{
+.nav>ul>a>li{
     margin-right: 20px;
+    color: #ff5d23;
 }
 
-.nav>ul>li>a{
-    color: #ff5d23;
+.nav>ul>a>{
     text-decoration: none;
 }
 

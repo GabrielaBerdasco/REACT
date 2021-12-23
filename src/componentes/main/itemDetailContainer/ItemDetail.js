@@ -2,7 +2,7 @@ import ItemCount from "./ItemCount"
 import "../styleMain.css"
 
 const ItemDetail = ({item}) => {
-    console.log(item);
+    
     const onAdd = (contador, setContador) => {
         if (contador !== 0) {
         setContador (1)
