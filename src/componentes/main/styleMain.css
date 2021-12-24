@@ -34,13 +34,25 @@ background-color: rgb(253, 205, 163);
     color: white;
     text-decoration: none;
 }
+
 /* Item List Container */
+
 .itemListContainer{
     color: #ff5d23;
     font-size: 35px;
     font-weight: 500;
     margin: 25px;
     text-align: center;
+}
+
+/* Nosotros */
+
+.nosotrosCentrado{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    color: gray;
+    font-size: 30px;
 }
 
 /* Item List*/
@@ -72,19 +84,23 @@ color: gray;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-bottom: 7px;
 
 }
 
 .cardImage{
     width: 100px;
     height: 100px;
-}
-
-.cardDescripcion{
- margin: 10px;
+    margin-bottom: 7px;
 }
 
 /* Item detail */
+
+.itemDTittle{
+    font-size: 40px;
+    color: gray;
+    margin: 60px 30px;
+}
 
 .selectedProduct{
     height: 450px;
@@ -135,9 +151,12 @@ align-items: center;
 .contadorAgregar{
     padding: 7px;
     width: 180px;
-    color: #ff5d23;
     background-color: ivory;
     border: 0.5px solid #ff5d23;
     border-radius: 5px;
 }
 
+.contadorAgregar>a{
+    color: #ff5d23;
+    text-decoration: none;
+}

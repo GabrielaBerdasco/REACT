@@ -2,8 +2,8 @@
 const Cart = () => {
     return (
         <article>
-          <h1>Carro de compras</h1>
-          <h3>Productos seleccionados:</h3>  
+          <h1 className="cartTittle">Carro de compras</h1>
+          <h3 className="cartTittle">Productos seleccionados:</h3>  
         </article>
     )
 }

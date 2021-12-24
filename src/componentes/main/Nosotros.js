@@ -1,6 +1,6 @@
 const Nosotros = () => {
     return (
-        <article>
+        <article className="nosotrosCentrado">
             <h1>Conoce más sobre nosotros</h1>
         </article>
     )
