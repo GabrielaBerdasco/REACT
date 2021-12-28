@@ -1,12 +1,18 @@
 import ItemCount from "./ItemCount"
 import "../styleMain.css"
+import { useState } from "react/cjs/react.development"
 
 const ItemDetail = ({item}) => {
+
+    const [mostrar, setMostrar] = useState(true)
     
     const onAdd = (contador, setContador) => {
         if (contador !== 0) {
         setContador (1)
         }
+    }
+    const removeCounter = () =>{
+        setMostrar (!mostrar)
     }
     
     if(item === null){
@@ -25,7 +31,7 @@ const ItemDetail = ({item}) => {
                     <h3>{item.nombre}</h3>
                     <p>{item.descripción}</p>
                     <h4>${item.precio}</h4>
-                    <ItemCount stock={item.stock} inicial={1} onAdd={onAdd}/>
+                    <ItemCount stock={item.stock} inicial={1} onAdd={onAdd} removeCounter={removeCounter} mostrar={mostrar}/>
                 </div>
             </div>
         </>
