@@ -2,12 +2,13 @@
 import CartButton from "./CartButton"
 
 
-const CartList = (productsToCart) => {
+const CartList = ({productsToCart}) => {
 
     return (
         <article className="cartCards">
-            {productsToCart.map( (item) => 
-            <CartButton key={item.id} product={item.product} quantity={item.quantity} />   
+            {productsToCart.map( (item) => ( 
+            <CartButton product={item.product} quantity={item.quantity} />   
+            )
             )}
         </article>
     )
