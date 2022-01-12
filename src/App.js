@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./componentes/header/Navbar";
 import ItemListContainer from "./componentes/main/itemListContainer/ItemListContainer";
 import ItemDetailContainer from "./componentes/main/itemDetailContainer/ItemDetailContainer";
-import Cart from "./componentes/header/Cart";
+import Cart from "./componentes/cart/Cart";
 import Nosotros from "./componentes/main/Nosotros";
 import Home from "./componentes/main/Home";
+import CartProvider from "./context/CartProvider";
 
 
 const App = () => {
@@ -18,18 +19,20 @@ const App = () => {
 
 
     return (
-        <BrowserRouter>
-            <Navbar navbarLinks={navbarLinks}/>
-            <main>
-                <Routes>
-                    <Route path="/" element={<Home/>} />
-                    <Route path="/nosotros" element={<Nosotros/>} />
-                    <Route path="/:name" element={<ItemListContainer nombre={"Diego"} apellido={"Grassino"}/>} />
-                    <Route path="/carrito" element={<Cart/>} />
-                    <Route path="/:name/productos/:id" element={<ItemDetailContainer />} />
-                </Routes>
-            </main>
-        </BrowserRouter>
+        <CartProvider>
+            <BrowserRouter>
+                <Navbar navbarLinks={navbarLinks}/>
+                <main>
+                    <Routes>
+                        <Route path="/" element={<Home/>} />
+                        <Route path="/nosotros" element={<Nosotros/>} />
+                        <Route path="/:name" element={<ItemListContainer nombre={"Diego"} apellido={"Grassino"}/>} />
+                        <Route path="/carrito" element={<Cart/>} />
+                        <Route path="/:name/productos/:id" element={<ItemDetailContainer />} />
+                    </Routes>
+                </main>
+            </BrowserRouter>
+        </CartProvider>
     );
 }
 

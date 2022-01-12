@@ -36,7 +36,7 @@ const ItemListContainer = ({nombre, apellido}) => {
             }
         })
     }, [name]);
-    console.log(productos);
+    
     return (
         <section>
             <h2 className="itemListContainer">

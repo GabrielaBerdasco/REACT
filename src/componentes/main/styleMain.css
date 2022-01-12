@@ -7,7 +7,7 @@
     justify-content: center;
     height: 150px;
     margin-top: 25px;
-    background-color: rgba(240, 165, 138, 0.89);
+    background-color: #f0a58ae3;
     color: white;
 }
 
@@ -22,7 +22,7 @@ height: 170px;
 margin: 70px;
 align-items: center;
 justify-content: space-between;
-background-color: rgb(253, 205, 163);
+background-color: #fdcda3;
 }
 
 .linkTittle{

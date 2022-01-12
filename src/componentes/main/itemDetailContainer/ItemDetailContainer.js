@@ -34,7 +34,6 @@ const ItemDetailContainer = () => {
             }
         })
     }, [id]);
-    console.log(item);
 
     return (
         <article>

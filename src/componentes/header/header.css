@@ -4,8 +4,8 @@
 }
 
 .header{
-    height: 90px;
-    background-color: bisque;
+    height: 100px;
+    background-color: #fdcda3;
 }
 
 .nav{
@@ -20,10 +20,10 @@
 }
 
 .brand>a{
-    color: #ff5d23;
+    color: white;
     margin-left: 20px;
     font-weight: 600;
-    font-size: xx-large;
+    font-size: 40px;
     text-decoration: none;    
 }
 
@@ -35,21 +35,23 @@
     font-size: larger;
 }
 
-.nav>ul>a>{
-    text-decoration: none;
-}
-
-.nav>ul>a>li{
+.navbarLink{
     margin-right: 20px;
-    color: #ff5d23;
+    color: white;
     text-decoration: none;
 }
 
-.icono{
-    color: rgba(0, 0, 0, 0.562);
-    font-size: 50px;
+.cartWidget{
+    color: rgba(255, 255, 255, 0.726);
+    font-size: 30px;
     margin-top: 25px;
     margin-right: 55px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+.icono{
+    font-size: 45px;
 }
 
 /* Cart */

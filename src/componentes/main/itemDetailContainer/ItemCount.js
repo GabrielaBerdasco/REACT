@@ -5,12 +5,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import "../styleMain.css"
 
 
-const ItemCount = ({stock, inicial, onAdd, removeCounter, mostrar}) => {
-    const [contador, setContador] = useState (inicial);
+const ItemCount = ({item, addToCart, onAdd, removeCounter, mostrar}) => {
+    const [contador, setContador] = useState (1);
 
 
     const sumar = () => {
-        if (contador < stock) {
+        if (contador < item.stock) {
         setContador (contador + 1)
         }
     }
@@ -39,7 +39,7 @@ const ItemCount = ({stock, inicial, onAdd, removeCounter, mostrar}) => {
                         <label className="contadorEtiqueta">{contador}</label>
                         <button onClick={restar} className="contadorResta">-</button>  
                     </div>
-                    <button onClick={() => {onAdd(contador, setContador); notify(); removeCounter()}} className="contadorAgregar">Agregar al carrito</button>
+                    <button onClick={() => {onAdd(contador, setContador); notify(); removeCounter(); addToCart(item.id, item, contador)}} className="contadorAgregar">Agregar al carrito</button>
                     <button className="contadorAgregar"><Link to="/carrito">Finalizar compra</Link></button>
                 </div>
             </>
