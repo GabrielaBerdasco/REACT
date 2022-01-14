@@ -1,16 +1,16 @@
 import { useContexto } from "../../context/CartProvider"
 
-const CartButton = ({product, quantity}) => {
+const CartButton = ({product, quantity, totalPrice}) => {
 
     const { removeProduct } = useContexto()
-    console.log(product);
+    console.log(totalPrice);
     return (
         <div key={product.id} className="selectedProduct">
-            <img src={product.imagen} alt="Imagen productos" className="itemImage" />
+            <img src={product.imagen} alt="Imagen productos" className="itemImagecart" />
             <div className="itemSelected">
                 <h3 className="cardNombre">{product.nombre}</h3>
-                <h3 className="cardPrecio">${product.precio}</h3>
                 <h3>Cantidad: {quantity}</h3>
+                <h3 className="cardPrecio">${totalPrice}</h3>
             </div>
             <button className="contadorAgregar" onClick={() => removeProduct(product.id)}>Eliminar producto</button>            
         </div>

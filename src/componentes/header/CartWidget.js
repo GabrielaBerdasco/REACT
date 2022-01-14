@@ -7,12 +7,19 @@ const CartWidget = () => {
     
     return(
         <>
+        {productsQuantity !== 0 ? (
             <NavLink to="/carrito" className= "cartWidget">
                 <span className="material-icons icono">
                     shopping_cart
                 </span>
                 {productsQuantity}
             </NavLink>
+        ) : (
+            <div>
+                
+            </div>
+        )
+        }
         </>
     );
 }

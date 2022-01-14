@@ -94,6 +94,10 @@ margin-bottom: 7px;
     margin-bottom: 7px;
 }
 
+.cardNombre{
+    font-size: 30px;
+}
+
 /* Item detail */
 
 .itemDTittle{
@@ -111,11 +115,13 @@ margin-bottom: 7px;
     justify-content: center;
     color: gray;
     font-size: 20px;
+    line-height: 30px;
     
 }
 
 .itemSelected{
     margin-left: 20px;
+    margin-right: 30px;
 }
 
 .itemImage{
