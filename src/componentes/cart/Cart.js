@@ -22,7 +22,7 @@ const {productsToCart, totalAmount, clear} = useContexto()
           ) : (
             <>
               <h4 className="cartTittle">(Todavía no hay productos seleccionados)</h4>
-              <button className="contadorAgregar"><NavLink to="/">Ir a Inicio</NavLink></button>
+              <NavLink to="/"><button className="contadorAgregar">Ir a Inicio</button></NavLink>
             </>
           )}  
         </section>

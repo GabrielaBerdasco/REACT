@@ -40,7 +40,7 @@ const ItemCount = ({item, addToCart, onAdd, removeCounter, mostrar}) => {
                         <button onClick={restar} className="contadorResta">-</button>  
                     </div>
                     <button onClick={() => {onAdd(contador, setContador); notify(); removeCounter(); addToCart(item.id, item, contador)}} className="contadorAgregar">Agregar al carrito</button>
-                    <button className="contadorAgregar"><Link to="/carrito">Finalizar compra</Link></button>
+                    <Link to="/carrito"><button className="contadorAgregar">Finalizar compra</button></Link>
                 </div>
             </>
             
