@@ -9,7 +9,6 @@ const ItemListContainer = ({nombre, apellido}) => {
 
     const [productos, setProductos] = useState([]);
     const { name } = useParams()
-
     
     useEffect(() => {
 

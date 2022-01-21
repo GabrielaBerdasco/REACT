@@ -3,7 +3,7 @@ import { useContexto } from "../../context/CartProvider"
 const CartButton = ({product, quantity, totalPrice}) => {
 
     const { removeProduct } = useContexto()
-    console.log(totalPrice);
+    
     return (
         <div key={product.id} className="selectedProduct">
             <img src={product.imagen} alt="Imagen productos" className="itemImagecart" />

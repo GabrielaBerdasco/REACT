@@ -19,3 +19,15 @@
     width: 200px;
     height: 185px;
 }
+
+.formulario>input {
+    margin: 20px;
+    border: 0.5px solid #ff5d23;
+    border-radius: 5px;
+    line-height: 25px;
+}
+
+.errorFormulario{
+    margin: 10px 20px;
+    color: red;
+}
