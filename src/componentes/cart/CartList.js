@@ -1,19 +1,16 @@
-/* import Item from "../main/itemListContainer/Item" */
 import CartButton from "./CartButton"
 
 
-const CartList = ({productsToCart}) => {
+const CartList = (props) => {
 
     return (
         <article className="cartCards">
-            {productsToCart.map( (item) => ( 
-            <CartButton key={item.id} product={item.product} quantity={item.quantity} totalPrice={item.totalPrice} />   
+            {props.products.map( (item) => ( 
+                <CartButton key={item.id} product={item.product} quantity={item.quantity} totalPrice={item.totalPrice} />   
             )
             )}
         </article>
     )
 }
-
-
 
 export default CartList

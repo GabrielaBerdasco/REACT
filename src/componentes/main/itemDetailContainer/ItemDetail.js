@@ -18,29 +18,26 @@ const ItemDetail = ({item}) => {
         setMostrar (!mostrar)
     }
     
-    if(item === null){
-        return (
-            <>
-            <h2 className="itemDTittle">Cargando...</h2>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <h2 className="itemDTittle">Producto seleccionado:</h2>
-                <div key={item.id} className="selectedProduct">
-                    <img src={item.imagen} alt="Yerbera de lata" className="itemImage" />
-                    <div className="itemSelected">
-                        <h3>{item.nombre}</h3>
-                        <p>{item.descripción}</p>
-                        <h4>${item.precio}</h4>
-                        <ItemCount item={item} addToCart={addToCart} onAdd={onAdd} removeCounter={removeCounter} mostrar={mostrar}/>
+    return (
+        <>
+            {!(item) ? (
+                <h2 className="itemDTittle">Cargando...</h2>
+            ) : (
+                <>
+                    <h2 className="itemDTittle">Producto seleccionado:</h2>
+                    <div key={item.id} className="selectedProduct">
+                        <img src={item.imagen} alt="Yerbera de lata" className="itemImage" />
+                        <div className="itemSelected">
+                            <h3>{item.nombre}</h3>
+                            <p>{item.descripción}</p>
+                            <h4>${item.precio}</h4>
+                            <ItemCount item={item} addToCart={addToCart} onAdd={onAdd} removeCounter={removeCounter} mostrar={mostrar}/>
+                        </div>
                     </div>
-                </div>
-            </>
-        )
-    }
-    
+                </>
+                )}
+        </>        
+    )
 }
 
 

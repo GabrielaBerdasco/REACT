@@ -2,7 +2,7 @@ import { useContexto } from "../../context/CartProvider"
 
 const CartButton = ({product, quantity, totalPrice}) => {
 
-    const { removeProduct } = useContexto()
+    const { removeProduct, productsToCart } = useContexto()
     
     return (
         <div key={product.id} className="selectedProduct">
@@ -12,7 +12,8 @@ const CartButton = ({product, quantity, totalPrice}) => {
                 <h3>Cantidad: {quantity}</h3>
                 <h3 className="cardPrecio">${totalPrice}</h3>
             </div>
-            <button className="contadorAgregar" onClick={() => removeProduct(product.id)}>Eliminar producto</button>            
+            {productsToCart.length >= 1 && (<button className="contadorAgregar" onClick={() => removeProduct(product.id)}>Eliminar producto</button>)}
+                        
         </div>
     )
 }

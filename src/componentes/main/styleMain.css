@@ -107,12 +107,10 @@ margin-bottom: 7px;
 }
 
 .selectedProduct{
-    height: 450px;
-    margin: 20px 40px;
+    margin: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     color: gray;
     font-size: 20px;
     line-height: 30px;

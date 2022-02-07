@@ -21,26 +21,28 @@ const ItemListContainer = ({nombre, apellido}) => {
             setProductos(docs.map( (doc) => ({ id: doc.id, ...doc.data() })))
             })
             .catch( (error) => {
-                console.log(error);
+                console.error(error);
             })
         } else {
-            getDocs(collectionFB)
+            const salientQuery = query(collectionFB, where("salient", "==", true))
+            getDocs(salientQuery)
             .then( ({ docs }) => {
             setProductos(docs.map( (doc) => ({ id: doc.id, ...doc.data() }) ) )
             })
             .catch( (error) => {
-                console.log(error);
+                console.error(error);
             })
         }
     }, [name]);
     
     return (
         <section>
-            <h2 className="itemListContainer">
-            ¡Bienvenido a nuestra tienda virtual, {nombre} {apellido}!
-            </h2>
+            {name && (
+                <h2 className="itemListContainer">
+                    ¡Bienvenido a nuestra tienda virtual, {nombre} {apellido}!
+                </h2>
+            )}
             <article>
-                <h3 className="itemListContainer">Productos Destacados</h3>
                 <ItemList productos={productos}/>
             </article>
         </section>

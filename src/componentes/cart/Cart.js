@@ -8,13 +8,14 @@ import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./cart.css"
-
+import ItemDetailContainer from "../main/itemDetailContainer/ItemDetailContainer";
 
 
 const Cart = () => {
 
 const [usuario, setUsuario] = useState({})
-
+const [validar, setValidar] = useState(false)
+const [ordenId, setOrdenId] = useState("")
 const {productsToCart, totalAmount, clear} = useContexto()
 
 const finalizarCompra = () => {
@@ -27,22 +28,28 @@ const finalizarCompra = () => {
     total: totalAmount,
   })
   .then( (resultado) => {
-    console.log(resultado.id);
     notify(resultado.id)
     clear()
+  })
+  .catch( (error) => {
+    console.error(error);
   })
 }
 
 const notify = (orden) => {
-  toast("Orden de compra: n° " + orden );
+  toast("Orden de compra: n° " + orden, {
+    position: "top-center",
+    autoClose: 10000,
+    closeOnClick: false,
+   } );
 }
 const formulario = (nombre, apellido, email) => {
-
   setUsuario({
     nombre: nombre, 
     apellido: apellido,
     email: email
   })
+  setValidar(!validar)
 }
 
     return (
@@ -51,17 +58,26 @@ const formulario = (nombre, apellido, email) => {
           {productsToCart.length > 0 ? (
             <>
               <h3 className="cartTittle">Productos seleccionados:</h3>
-              <CartList productsToCart={productsToCart} />
+              <CartList products={productsToCart} />
               <button onClick={() => clear()} className="contadorAgregar">Eliminar productos</button>
               <h3 className="cartTittle">Precio Total: ${totalAmount}</h3>
               <Form formulario={formulario} />
-                <button onClick={() => finalizarCompra()} className="contadorAgregar">Finalizar Compra</button>
+              {validar ? (
+                <button onClick={() => finalizarCompra()}  className="contadorAgregar">Finalizar Compra</button>
+              ) : (
+                <h5 className="errorFormulario">Por favor, ingrese sus datos para terminar la compra</h5>
+              )}
             </>
           ) : (
             <>
               <ToastContainer />
               <h4 className="cartTittle">(Todavía no hay productos seleccionados)</h4>
               <NavLink to="/"><button className="contadorAgregar">Ir a Inicio</button></NavLink>
+              <h3 className="cartTittle">O consulta tu pedido:</h3>
+              <form className="formulario">
+                  <input type="text" placeholder="Número de orden" onChange={(e) => setOrdenId(e.target.value)} />
+              </form>
+                  {ordenId.length === 20 ? (<ItemDetailContainer ordenId={ordenId} />) : ( <h6>Ingrese su número de orden (20 caracteres)</h6> )}
             </>
           )}  
         </section>

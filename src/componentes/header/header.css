@@ -57,3 +57,14 @@
     align-items: center;
 }
 
+.emptyCart{
+    color: rgba(255, 255, 255, 0.726);
+    background-color: #f0a58ae3;
+    font-size: large;
+    margin: 5px 20px;
+    padding: 3px;
+    width: 110px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-align: center;
+}

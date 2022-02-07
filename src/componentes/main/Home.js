@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import ItemListContainer from "./itemListContainer/ItemListContainer"
 import "./styleMain.css"
 
 const Home = () => {
@@ -15,7 +16,11 @@ const Home = () => {
             </article>
             <article className="inicioCategorías">
                 <h1 className="linkTittle"><Link to="/accesorios">Accesorios</Link></h1>
-                <img src="https://dl.dropboxusercontent.com/s/rg3e81ppjrag2du/WhatsApp%20Image%202021-12-23%20at%2012.42.29.jpeg?dl=0" alt="Escurridor" className="itemImage" />
+                <img src="https://dl.dropboxusercontent.com/s/ce6oxs9d9dcj4v6/CuadernoImagine.jpeg?dl=0" alt="Cuaderno" className="itemImage" />
+            </article>
+            <article>
+                <h3 className="itemListContainer">Productos Destacados</h3>
+                <ItemListContainer/>
             </article>
         </section>
     )

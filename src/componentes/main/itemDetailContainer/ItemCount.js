@@ -16,23 +16,22 @@ const ItemCount = ({item, addToCart, onAdd, removeCounter, mostrar}) => {
     }
 
     const restar = () => {
-        if (contador > 0) {
+        if (contador > 1) {
         setContador (contador - 1)
         }
     }
 
-    const notify = () =>{
-        if(contador > 0) {
-        toast("Agregaste " + contador + " productos al carrito");
-        } else {
-            toast.error("Por favor, selecciona cantidad de unidades")
-        }
+    const notify = () => {
+        toast("Agregaste " + contador + " productos al carrito", {
+            position: "top-center",
+            autoClose: 3000,
+        });
     }
 
-    if (mostrar) {
         return (
             <>
                 <ToastContainer />
+                {mostrar ? (
                 <div className="contadorContainer">
                     <div>   
                         <button onClick={sumar} className="contadorSuma">+</button>
@@ -40,25 +39,17 @@ const ItemCount = ({item, addToCart, onAdd, removeCounter, mostrar}) => {
                         <button onClick={restar} className="contadorResta">-</button>  
                     </div>
                     <button onClick={() => {onAdd(contador, setContador); notify(); removeCounter(); addToCart(item.id, item, contador)}} className="contadorAgregar">Agregar al carrito</button>
-                    <Link to="/carrito"><button className="contadorAgregar">Finalizar compra</button></Link>
                 </div>
-            </>
-            
-        )
-        
-    } else {
-        return (
-            <>
-                <ToastContainer />
+                ) : (
                 <div className="contadorContainer">
                     <h3>Productos en carrito</h3>
                     <h6>Por favor, finalice su compra</h6>
-                    <button className="contadorAgregar"><Link to="/carrito">Finalizar compra</Link></button>
+                    <Link to="/carrito"><button className="contadorAgregar">Ir al carrito</button></Link>
                 </div>
+                )}
             </>
-        );
-    }
-    
+            
+        )    
 }
 
 

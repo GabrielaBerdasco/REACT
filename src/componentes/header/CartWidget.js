@@ -16,7 +16,7 @@ const CartWidget = () => {
             </NavLink>
         ) : (
             <div>
-                
+                <h6 className="emptyCart">Todavía no agregaste productos al carrito</h6>
             </div>
         )
         }
