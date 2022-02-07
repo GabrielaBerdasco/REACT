@@ -72,7 +72,7 @@ const formulario = (nombre, apellido, email) => {
             <>
               <ToastContainer />
               <h4 className="cartTittle">(Todavía no hay productos seleccionados)</h4>
-              <NavLink to="/"><button className="contadorAgregar">Ir a Inicio</button></NavLink>
+              <NavLink to="/home"><button className="contadorAgregar">Ir a Inicio</button></NavLink>
               <h3 className="cartTittle">O consulta tu pedido:</h3>
               <form className="formulario">
                   <input type="text" placeholder="Número de orden" onChange={(e) => setOrdenId(e.target.value)} />

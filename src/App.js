@@ -36,7 +36,7 @@ const App = () => {
                 <Navbar navbarLinks={navbarLinks}/>
                 <main>
                     <Routes>
-                        <Route path="/" element={<Home/>} />
+                        <Route path="/home" element={<Home/>} />
                         <Route path="/nosotros" element={<Nosotros/>} />
                         <Route path="/:name" element={<ItemListContainer nombre={"Horacio"} apellido={"Gutierrez"}/>} />
                         <Route path="/carrito" element={<Cart/>} />

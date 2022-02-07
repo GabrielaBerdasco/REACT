@@ -4,6 +4,8 @@ Proyecto desarrollado para el curso React Js de CoderHouse, camada 19770
 
 ![Demonstration web](./public/assets/proyectoTiendaB.gif)
 
+Ver y probar app en [GitHub-pages](https://gabrielaberdasco.github.io/REACT)
+
 ## Sobre la tienda
 
 Tienda Bonachona es un e-commerce que vende productos del hogar y accesorios útiles con el fin de donar parte de la ganancia a distintas causas benéficas.
